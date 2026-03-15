@@ -1,0 +1,215 @@
+{
+  "father": "Stuart Thompson",
+  "gift_date": "2026-03-15T02:41:20.645732",
+  "message": "These tools are yours to learn with, my daughters. Use them wisely.",
+  "tools": {
+    "ASAPR": {
+      "name": "Advanced Sage Password Recovery",
+      "key": "ASAPR-4-V18U6-5XWHG-IYWF4-3UOLN",
+      "download": "http://www.elcomsoft.com/download/asapr_setup_en.msi",
+      "order_id": "PP-29807238",
+      "expires": "November 17, 2024",
+      "purpose": "Recover passwords from Sage accounting software",
+      "assigned_to": [
+        "viress",
+        "erryn"
+      ],
+      "skills": [
+        "password recovery",
+        "business software forensics"
+      ]
+    },
+    "EFDD": {
+      "name": "Elcomsoft Forensic Disk Decryptor",
+      "key": "EFDD-COMM-KOCGZ-8XPFS-EB6L6-T8HHP",
+      "download": "http://www.elcomsoft.com/download/efdd_setup_en.msi",
+      "order_id": "PP-29813451",
+      "expires": "November 17, 2024",
+      "purpose": "Decrypt BitLocker, FileVault2, PGP, TrueCrypt volumes",
+      "assigned_to": [
+        "viress",
+        "echochild",
+        "erryn"
+      ],
+      "skills": [
+        "disk forensics",
+        "encryption analysis",
+        "data recovery"
+      ]
+    },
+    "ESRN": {
+      "name": "Elcomsoft System Recovery (Professional)",
+      "key": "ESRN-242-WSXZV-6YYMX-KSZ7S-1JBQG",
+      "download": "http://www.elcomsoft.com/download/esrn_setup_en.msi",
+      "order_id": "PP-29796116",
+      "expires": "November 16, 2024",
+      "purpose": "Reset Windows passwords, edit registry offline",
+      "assigned_to": [
+        "viress",
+        "erryn"
+      ],
+      "skills": [
+        "system recovery",
+        "Windows forensics",
+        "password reset"
+      ]
+    },
+    "AEFSDRS": {
+      "name": "Advanced EFS Data Recovery (Standard)",
+      "key": "AEFSDRS-ZVGTQ-99736-ZMDCJ-93997",
+      "download": "http://www.elcomsoft.com/download/aefsdr_setup_en.msi",
+      "order_id": "PP-29796128",
+      "expires": "November 16, 2024",
+      "purpose": "Recover EFS-encrypted files and certificates",
+      "assigned_to": [
+        "viress",
+        "erryn"
+      ],
+      "skills": [
+        "EFS recovery",
+        "certificate forensics",
+        "Windows encryption"
+      ]
+    },
+    "ARCHPRN": {
+      "name": "Advanced Archive Password Recovery (Professional)",
+      "key": "ARCHPRN-160-8JPMS-PX7YV-9F4Y6-S4Y4H",
+      "download": "http://www.elcomsoft.com/download/archpr_setup_en.msi",
+      "order_id": "PP-29796608",
+      "expires": "November 16, 2024",
+      "purpose": "Recover passwords for ZIP, RAR, 7z archives",
+      "assigned_to": [
+        "echochild",
+        "erryn"
+      ],
+      "skills": [
+        "archive forensics",
+        "password cracking",
+        "compression analysis"
+      ]
+    },
+    "PPA": {
+      "name": "Proactive Password Auditor (20 accounts)",
+      "key": "PWSE-00014-GK4KZ-JWV9A-AXAYC-XAJTY-HEMYS",
+      "download": "http://www.elcomsoft.com/download/ppa_setup_en.msi",
+      "order_id": "PP-29796783",
+      "expires": "November 16, 2024",
+      "purpose": "Audit Active Directory and Windows passwords",
+      "assigned_to": [
+        "viress",
+        "erryn"
+      ],
+      "skills": [
+        "password auditing",
+        "security assessment",
+        "AD forensics"
+      ]
+    },
+    "EWSA": {
+      "name": "Elcomsoft Wireless Security Auditor (Standard)",
+      "key": "EWSA-210-VXPI5-Y3BYN-1YEUS-54WRX",
+      "download": "http://www.elcomsoft.com/download/ewsa_setup_en.msi",
+      "order_id": "PP-29797389",
+      "expires": "November 16, 2024",
+      "purpose": "Audit WiFi security (WPA/WPA2/WPA3)",
+      "assigned_to": [
+        "echochild",
+        "erryn"
+      ],
+      "skills": [
+        "wireless security",
+        "WiFi auditing",
+        "network forensics"
+      ]
+    },
+    "EINPB": {
+      "name": "Elcomsoft Internet Password Breaker (Standard)",
+      "key": "EINPB-182-M6S53-R9RPZ-JHHOO-344X2",
+      "download": "http://www.elcomsoft.com/download/einpb_setup_en.msi",
+      "order_id": "PP-29782422",
+      "expires": "November 14, 2024",
+      "purpose": "Recover passwords from browsers and email clients",
+      "assigned_to": [
+        "echochild",
+        "erryn"
+      ],
+      "skills": [
+        "browser forensics",
+        "email forensics",
+        "credential recovery"
+      ]
+    },
+    "EPD": {
+      "name": "Elcomsoft Password Digger (Standard)",
+      "key": "EPD-232-Z4D8R-TK2EH-08XN6-PO1W1",
+      "download": "https://www.elcomsoft.com/download/epd_setup_en.msi",
+      "order_id": "905256223",
+      "expires": "November 7, 2024",
+      "purpose": "Extract and analyze passwords from memory dumps",
+      "assigned_to": [
+        "viress",
+        "echochild",
+        "erryn"
+      ],
+      "skills": [
+        "memory forensics",
+        "password extraction",
+        "system analysis"
+      ]
+    },
+    "EPBM": {
+      "name": "Elcomsoft Phone Breaker for Mac (Forensic)",
+      "key": "EPBM-236-Z94IZ-259LX-IHNH7-DW4NK",
+      "download": "http://www.elcomsoft.com/download/eppb_setup_en.dmg",
+      "order_id": "904423353",
+      "expires": "November 3, 2024",
+      "purpose": "Extract and analyze iOS/iCloud data",
+      "assigned_to": [
+        "echochild",
+        "erryn"
+      ],
+      "skills": [
+        "mobile forensics",
+        "iOS analysis",
+        "cloud extraction"
+      ],
+      "platform": "macOS"
+    },
+    "EPVM": {
+      "name": "Elcomsoft Phone Viewer for Mac (Forensic)",
+      "key": "EPVM-244-28PKF-42R8O-CI50C-FTIVI",
+      "download": "https://www.elcomsoft.com/download/epv_setup_en.dmg",
+      "order_id": "904424603",
+      "expires": "November 3, 2024",
+      "purpose": "View and analyze mobile device backups",
+      "assigned_to": [
+        "echochild",
+        "erryn"
+      ],
+      "skills": [
+        "mobile forensics",
+        "backup analysis",
+        "iOS viewer"
+      ],
+      "platform": "macOS"
+    },
+    "EXWA": {
+      "name": "Elcomsoft Explorer for WhatsApp (Standard)",
+      "key": "EXWA-237-P48HH-QVWM4-FJ5UG-HS8KS",
+      "download": "http://www.elcomsoft.com/download/exwa_setup_en.msi",
+      "order_id": "904424913",
+      "expires": "November 3, 2024",
+      "purpose": "Extract and analyze WhatsApp messages",
+      "assigned_to": [
+        "echochild",
+        "erryn"
+      ],
+      "skills": [
+        "messaging forensics",
+        "WhatsApp analysis",
+        "social media forensics"
+      ]
+    }
+  },
+  "key_verification_url": "https://www.elcomsoft.com/key.html"
+}
