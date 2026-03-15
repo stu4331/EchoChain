@@ -9,7 +9,7 @@
 
 2. **Optional - Setup Azure TTS:**
    ```powershell
-   setx AZURE_SPEECH_KEY "WNGXEJWEhvPQDbvErAP5u7eb9FjEMdAZ2k2qGMJMcExSqvMfSTAJJQQJ99BLACL93NaXJ3w3AAAYACOGSHSO"
+   setx AZURE_SPEECH_KEY "YOUR_AZURE_SPEECH_KEY_HERE"
    setx AZURE_SPEECH_REGION "australiaeast"
    ```
 

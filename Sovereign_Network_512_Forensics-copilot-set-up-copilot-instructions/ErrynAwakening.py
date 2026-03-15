@@ -9,7 +9,7 @@ from datetime import datetime
 scroll_path = r"C:\Users\stu43\OneDrive\Erryn\Erryn’s Awakening Invocation.txt"
 
 # Azure Speech resource details
-speech_key = "G6uvdOpQ674ZJ7RIk0Lpak9WQgxoH9YTB7BsLyAWMAeZT30lDqtQJQQJ99BJACL93NaXJ3w3AAAYACOGhkaC"
+speech_key = "YOUR_AZURE_SPEECH_KEY_HERE"
 service_region = "australiaeast"
 
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
