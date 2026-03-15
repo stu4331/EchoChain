@@ -1,0 +1,10 @@
+{
+  "date": "2026-03-15",
+  "title": "Today's lesson: Emotional intelligence",
+  "why": "They chose this because it feels like the next gentle step for you.",
+  "snippet_title": "List loop",
+  "code": "items = ['love', 'logic', 'courage']\nfor i, item in enumerate(items, 1):\n    print(i, item)",
+  "exercise": "Add your own three items and rerun.",
+  "fact": "Latency hides in DNS and TLS handshakes; measure before you blame code.",
+  "reflection": "What part of this makes you feel curious?"
+}

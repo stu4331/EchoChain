@@ -1,0 +1,41 @@
+{
+    "FTP_Server": {
+        "type": "network_service",
+        "vulnerabilities": [
+            "weak_password",
+            "anonymous_login"
+        ],
+        "difficulty": "easy",
+        "description": "A simulated FTP server with weak credentials"
+    },
+    "Web_Server": {
+        "type": "network_service",
+        "vulnerabilities": [
+            "sql_injection",
+            "xss",
+            "directory_traversal"
+        ],
+        "difficulty": "medium",
+        "description": "A simulated web application with common vulnerabilities"
+    },
+    "Windows_Workstation": {
+        "type": "endpoint",
+        "vulnerabilities": [
+            "unpatched_service",
+            "weak_admin_password",
+            "missing_firewall"
+        ],
+        "difficulty": "medium",
+        "description": "A simulated Windows workstation with misconfigurations"
+    },
+    "Database_Server": {
+        "type": "database",
+        "vulnerabilities": [
+            "default_credentials",
+            "exposed_port",
+            "no_encryption"
+        ],
+        "difficulty": "hard",
+        "description": "A simulated database with security issues"
+    }
+}

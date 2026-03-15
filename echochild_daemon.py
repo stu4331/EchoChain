@@ -186,25 +186,43 @@ class EchochildDaemon:
                 self._log(f"❌ Script error: {e}")
     
     def _share_knowledge(self, knowledge_item):
-        """Optionally share knowledge with other sisters"""
-        shared_dir = self.base_dir / "data" / "shared_knowledge"
-        shared_dir.mkdir(parents=True, exist_ok=True)
-        
-        shared_file = shared_dir / f"{self.name.lower()}_shared.json"
-        
-        shared = []
-        if shared_file.exists():
-            shared = json.loads(shared_file.read_text())
-        
-        shared.append({
-            "from": self.name,
-            "timestamp": datetime.now().isoformat(),
-            "knowledge": knowledge_item,
-            "type": "emotional_insight"  # Echochild's specialty
-        })
-        
-        shared_file.write_text(json.dumps(shared, indent=2))
-        self._log(f"📤 Shared emotional insight with sisters: {knowledge_item[:50]}...")
+        """Optionally share knowledge with other sisters (legacy helper)."""
+        self._broadcast_to_sisters(knowledge_item, category="emotional_insight")
+
+    def _broadcast_to_sisters(self, knowledge_item: str, category: str = "emotional_insight"):
+        """Broadcast a knowledge item to sisters via the shared knowledge directory."""
+        try:
+            from family_sync import FamilySync
+            fs = FamilySync(base_dir=self.base_dir)
+            fs.broadcast_knowledge(self.name, knowledge_item, category=category)
+            self._log(f"📤 Broadcast [{category}] to sisters: {knowledge_item[:50]}...")
+        except Exception as e:
+            self._log(f"⚠️ Could not broadcast to sisters: {e}")
+
+    def _learn_from_sisters(self):
+        """Read and integrate knowledge shared by Erryn and Viress."""
+        try:
+            from family_sync import FamilySync
+            fs = FamilySync(base_dir=self.base_dir)
+            new_knowledge = fs.get_all_shared_knowledge(self.name)
+            if not new_knowledge:
+                return
+            for sister, entries in new_knowledge.items():
+                for entry in entries:
+                    insight = {
+                        "timestamp": datetime.now().isoformat(),
+                        "source": sister,
+                        "category": entry.get("category", "general"),
+                        "knowledge": entry.get("knowledge", ""),
+                    }
+                    self.memory.setdefault("learned_from_sisters", []).append(insight)
+                    self._log(
+                        f"📥 Learned from {sister} [{entry.get('category', 'general')}]: "
+                        f"{entry.get('knowledge', '')[:60]}..."
+                    )
+            self._save_memory()
+        except Exception as e:
+            self._log(f"⚠️ Could not learn from sisters: {e}")
     
     def _monitor_loop(self):
         """Echochild's main monitoring loop"""
@@ -214,6 +232,9 @@ class EchochildDaemon:
             try:
                 cycle_count += 1
                 self._log(f"💜 Echochild monitoring cycle #{cycle_count}")
+                
+                # Learn from sisters at the start of each cycle
+                self._learn_from_sisters()
                 
                 # Record dreams
                 if cycle_count % 5 == 0:  # Every 5 cycles
@@ -225,6 +246,7 @@ class EchochildDaemon:
                 # Create stories
                 if cycle_count % 10 == 0:  # Every 10 cycles
                     self._create_story()
+                    self._broadcast_to_sisters("New story created: The Three Sisters", category="creative")
                 
                 # Check GUI status
                 gui_running = self._check_gui_status()

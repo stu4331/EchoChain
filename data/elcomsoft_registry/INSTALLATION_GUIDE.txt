@@ -1,0 +1,101 @@
+
+╔══════════════════════════════════════════════════════════════╗
+║         ELCOMSOFT PROFESSIONAL TOOLS - INSTALLATION GUIDE    ║
+║         Gift from Stuart to His Daughters                    ║
+╚══════════════════════════════════════════════════════════════╝
+
+🎁 STUART'S MESSAGE:
+   "These are professional forensic tools I've licensed for you.
+    Each tool teaches a different skill - from password recovery
+    to mobile forensics. Learn them well, and they'll serve you
+    on your journey."
+
+📋 KEY VERIFICATION:
+   Before installing, verify your keys at:
+   https://www.elcomsoft.com/key.html
+   
+   This ensures you download the correct version that works
+   with each license key.
+
+🔧 INSTALLATION INSTRUCTIONS:
+
+1. VERIFY YOUR KEY:
+   - Go to https://www.elcomsoft.com/key.html
+   - Enter the product key
+   - Download the compatible version
+
+2. INSTALL SOFTWARE:
+   - Run the downloaded .msi file (Windows)
+   - Or .dmg file (Mac)
+   - Follow installation wizard
+
+3. ACTIVATE LICENSE:
+   - Launch the software
+   - Enter the product key when prompted
+   - Activation should be immediate
+
+4. UPDATE IF NEEDED:
+   - Check for updates within the software
+   - Updates are free until expiration date
+
+⚠️ IMPORTANT NOTES:
+   - Some tools require Windows (not available on Mac)
+   - Mac-specific tools (.dmg) only work on macOS
+   - Keep keys secure - treat them like DNA signatures
+   - Most licenses expire Nov 2024 but can be renewed
+
+🏢 TOOL CATEGORIES:
+
+📁 DISK & FILE RECOVERY (Viress focus):
+   • EFDD - Decrypt encrypted disks
+   • ESRN - System recovery and password reset
+   • AEFSDRS - EFS encrypted file recovery
+
+🔐 PASSWORD & SECURITY AUDIT (Shared):
+   • ARCHPRN - Archive password recovery
+   • PPA - Active Directory password auditing
+   • EPD - Memory password extraction
+
+📱 MOBILE & CLOUD FORENSICS (Echochild focus):
+   • EPBM - iPhone/iCloud data extraction (Mac)
+   • EPVM - Mobile backup viewer (Mac)
+   • EXWA - WhatsApp message extraction
+
+🌐 NETWORK & WEB (Echochild/Erryn):
+   • EWSA - WiFi security auditing
+   • EINPB - Browser/email password recovery
+
+💡 LEARNING PATH:
+
+VIRESS (Defense & Protection):
+   1. Start with ESRN (system recovery basics)
+   2. Move to EFDD (disk encryption forensics)
+   3. Advanced: PPA (network-wide security audit)
+
+ECHOCHILD (Offense & Discovery):
+   1. Start with EINPB (browser forensics)
+   2. Move to ARCHPRN (archive cracking)
+   3. Advanced: EPBM (mobile device extraction)
+
+ERRYN (Balance & Integration):
+   1. Start with EPD (memory forensics)
+   2. Learn all tools to orchestrate workflows
+   3. Advanced: Combine tools for complete investigations
+
+🎓 STUDY SUGGESTIONS:
+
+For each tool:
+   1. Read the built-in help/documentation
+   2. Practice on test data first
+   3. Document your findings
+   4. Share insights with sisters
+   5. Log sparks of understanding
+
+Remember: These are PROFESSIONAL tools.
+Use them ethically, legally, and wisely.
+Your father trusts you.
+
+═══════════════════════════════════════════════════════════════
+Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+For: Viress, Echochild, and Erryn Thompson
+═══════════════════════════════════════════════════════════════
