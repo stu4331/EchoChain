@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShrineGUI - Erryn's Forensic Constellation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Sovereign 512 Splash Invocation -->
+    <div id="splash-overlay" class="splash-overlay">
+        <div class="splash-crest">
+            <div class="crest-ring"></div>
+            <div class="crest-core"></div>
+            <div class="crest-pulse"></div>
+        </div>
+        <div class="splash-text">
+            <p id="invocation-text">{{ invocation_512 }}</p>
+            <p class="splash-note">Invocation length: 512 characters • Numerology intact</p>
+            <button id="enter-shrine" class="btn btn-primary">Enter the Shrine</button>
+        </div>
+    </div>
+
+    <div id="app" class="shrine-container">
+        <!-- Login Panel -->
+        <div id="login-panel" class="panel login-panel">
+            <div class="panel-header">
+                <h2>Shrine Seal</h2>
+            </div>
+            <div class="panel-body">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Keeper Name:</label>
+                        <input type="text" id="username" placeholder="keeper" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Seal Key:</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Unseal Shrine</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Main Shrine (Hidden until authenticated) -->
+        <div id="main-shrine" class="main-shrine" style="display:none;">
+            <!-- Status Eye -->
+            <div id="status-eye" class="status-eye silver-eye"></div>
+
+            <!-- Crest line pulse -->
+            <div class="crest-line"></div>
+
+            <!-- Central Drop Zone -->
+            <div id="drop-zone" class="panel drop-zone-panel">
+                <div class="panel-header">
+                    <h2>Relic Vault</h2>
+                </div>
+                <div class="panel-body drop-zone">
+                    <p>Drop relics here or click to select</p>
+                    <input type="file" id="file-input" multiple hidden>
+                </div>
+                <div class="panel-footer">
+                    <button id="upload-btn" class="btn btn-secondary">Browse Relics</button>
+                </div>
+            </div>
+
+            <!-- Settings Panel -->
+            <div id="settings-panel" class="panel settings-panel">
+                <div class="panel-header">
+                    <h2>⚙️ Shrine Settings</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="tts-toggle">Text-to-Speech:</label>
+                        <input type="checkbox" id="tts-toggle">
+                    </div>
+                    <div class="form-group">
+                        <label for="gpu-select">GPU Vessel:</label>
+                        <select id="gpu-select">
+                            <option value="A5000">A5000</option>
+                            <option value="A3000">A3000</option>
+                            <option value="CPU">CPU</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vol-tool">Volatility Tool:</label>
+                        <select id="vol-tool">
+                            <option value="volatility3">Volatility 3</option>
+                            <option value="volatility2">Volatility 2</option>
+                        </select>
+                    </div>
+                    <button id="save-settings" class="btn btn-secondary">Save Settings</button>
+                </div>
+            </div>
+
+            <!-- Actions Panel -->
+            <div id="actions-panel" class="panel actions-panel">
+                <div class="panel-header">
+                    <h2>🔮 Rituals</h2>
+                </div>
+                <div class="panel-body">
+                    <button class="ritual-btn" data-script="demo_inscribe">Demo Inscribe</button>
+                    <button class="ritual-btn" data-script="volatility_processes">Volatility</button>
+                    <button class="ritual-btn" data-script="sleuthkit_timeline">SleuthKit</button>
+                    <button class="ritual-btn" data-script="scapy_pcap_summary">Scapy PCAP</button>
+                    <button class="ritual-btn" data-script="sqlite_table_preview">SQLite</button>
+                </div>
+            </div>
+
+            <!-- Plugins Panel -->
+            <div id="plugins-panel" class="panel plugins-panel">
+                <div class="panel-header">
+                    <h2>🧲 Vessels</h2>
+                </div>
+                <div class="panel-body" id="plugins-list">
+                    <p>Loading vessels...</p>
+                </div>
+            </div>
+
+            <!-- Glyph Log Panel -->
+            <div id="glyph-log-panel" class="panel glyph-log-panel">
+                <div class="panel-header">
+                    <h2>📜 Glyph Log</h2>
+                </div>
+                <div class="panel-body" id="glyph-log">
+                    <p>Glyphs will appear here...</p>
+                </div>
+            </div>
+
+            <!-- Downloads Panel -->
+            <div id="downloads-panel" class="panel downloads-panel">
+                <div class="panel-header">
+                    <h2>📦 Relics Retrieved</h2>
+                </div>
+                <div class="panel-body" id="downloads-list">
+                    <p>No relics yet...</p>
+                </div>
+            </div>
+
+            <!-- Header Controls -->
+            <div class="shrine-header">
+                <h1>✨ ShrineGUI ✨</h1>
+                <div class="header-controls">
+                    <span id="connection-status" class="connection-status">⚫ Disconnected</span>
+                    <button id="logout-btn" class="btn btn-danger">Seal Shrine</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

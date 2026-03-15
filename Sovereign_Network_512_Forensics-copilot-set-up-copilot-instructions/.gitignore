@@ -1,0 +1,28 @@
+# Core keepers
+!.gitignore
+!README.md
+!LICENSE*
+!requirements.txt
+!pyproject.toml
+!setup.cfg
+!*.md
+!*.py
+
+# Exclude bulk artifacts
+*.json
+*.ini
+*.ps1
+*.cfg
+*.txt
+*.log
+__pycache__/
+*.pyc
+.venv/
+.venv311/
+.venv*/
+.vscode/
+.idea/
+.env
+.env.local
+.env.*.local
+data/

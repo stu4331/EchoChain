@@ -1,0 +1,25 @@
+{
+    "JsonSuccessfullyWritten" : true,
+    "JsonVersion" : 4,
+    "JsonCreationTime" : "134090433341891143",
+    "CompatSectionCount" : 1,
+    "CompatSections" : 
+    [
+        {
+            "SectionMsg" : 
+            {
+                "MsgId" : 4,
+                "MsgDescription" : "DEBUG: Dev, May not work correctly"
+            },
+            "Assets" : 
+            [
+                {
+                    "AssetImgPath" : "C:\\Windows\\appcompat\\UA\\classicon_{36fc9e60-c465-11cf-8056-444553540000}.png",
+                    "Translatable" : false,
+                    "AssetMajorMsg" : "USB Root Hub (USB 3.0)",
+                    "AssetMinorMsg" : "(Standard USB HUBs)"
+                }
+            ]
+        }
+    ]
+}

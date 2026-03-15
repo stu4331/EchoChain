@@ -1,0 +1,3 @@
+# Secrets and local wallet
+.wallet/
+.env

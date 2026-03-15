@@ -1,0 +1,534 @@
+/* ShrineGUI Mystical Stylesheet */
+
+:root {
+    --primary-dark: #0a0e27;
+    --secondary-dark: #151b3b;
+    --accent-light: #e0e6ff;
+    --glow-blue: #3b82f6;
+    --glow-green: #10b981;
+    --glow-purple: #a855f7;
+    --glow-teal: #14b8a6;
+    --glow-red: #ef4444;
+    --glow-orange: #f97316;
+    --glow-silver: #c0c0c0;
+    --glow-gold: #fbbf24;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #1a0033 100%);
+    color: var(--accent-light);
+    overflow: hidden;
+}
+
+.splash-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 20% 20%, rgba(59,130,246,0.12), transparent 35%),
+                radial-gradient(circle at 80% 30%, rgba(20,184,166,0.12), transparent 35%),
+                radial-gradient(circle at 50% 70%, rgba(168,85,247,0.18), transparent 45%),
+                #050716;
+    z-index: 2000;
+    transition: opacity 0.6s ease;
+}
+
+.splash-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.splash-text {
+    max-width: 760px;
+    text-align: center;
+    margin-top: 30px;
+    line-height: 1.4;
+}
+
+.splash-text p {
+    margin-bottom: 12px;
+}
+
+.splash-note {
+    color: var(--glow-teal);
+    font-size: 0.9em;
+}
+
+.splash-crest {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+}
+
+.crest-ring {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid var(--glow-gold);
+    box-shadow: 0 0 30px rgba(251,191,36,0.5);
+    animation: crest-spin 18s linear infinite;
+}
+
+.crest-core {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff 0%, #fbbf24 30%, #0a0e27 90%);
+    box-shadow: 0 0 40px rgba(255,255,255,0.3);
+}
+
+.crest-pulse {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px dashed rgba(59,130,246,0.4);
+    animation: crest-pulse 3s ease-in-out infinite;
+}
+
+@keyframes crest-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes crest-pulse {
+    0%, 100% { transform: scale(0.9); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+.shrine-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== LOGIN PANEL ===== */
+.login-panel {
+    position: fixed;
+    width: 400px;
+    background: var(--secondary-dark);
+    border: 2px solid var(--glow-purple);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+    padding: 30px;
+    z-index: 1000;
+}
+
+.login-panel h2 {
+    color: var(--glow-purple);
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--glow-purple);
+    font-size: 0.9em;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary-dark);
+    border: 1px solid var(--glow-purple);
+    border-radius: 4px;
+    color: var(--accent-light);
+    font-family: 'Courier New', monospace;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    box-shadow: 0 0 15px var(--glow-purple);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: var(--glow-purple);
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px var(--glow-purple);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--glow-teal);
+    color: white;
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 0 20px var(--glow-teal);
+}
+
+.btn-danger {
+    background: var(--glow-red);
+    color: white;
+}
+
+.btn-danger:hover {
+    box-shadow: 0 0 20px var(--glow-red);
+}
+
+/* ===== MAIN SHRINE ===== */
+.main-shrine {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.shrine-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--secondary-dark);
+    border-bottom: 2px solid var(--glow-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 500;
+}
+
+.shrine-header h1 {
+    font-size: 1.5em;
+    color: var(--glow-blue);
+    text-shadow: 0 0 15px var(--glow-blue);
+}
+
+.header-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.connection-status {
+    font-size: 0.9em;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ===== STATUS EYE ===== */
+.status-eye {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    z-index: 100;
+    box-shadow: 0 0 30px currentColor;
+    animation: eye-blink 3s infinite;
+}
+
+.crest-line {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    width: 4px;
+    height: 140px;
+    background: linear-gradient(180deg, rgba(251,191,36,0.9), rgba(59,130,246,0.4));
+    box-shadow: 0 0 18px rgba(251,191,36,0.6);
+    animation: crest-line-pulse 4s ease-in-out infinite;
+    border-radius: 2px;
+}
+
+@keyframes crest-line-pulse {
+    0%, 100% { transform: scaleY(0.9); opacity: 0.8; }
+    50% { transform: scaleY(1.1); opacity: 1; }
+}
+
+.blue-eye { color: var(--glow-blue); }
+.green-eye { color: var(--glow-green); }
+.purple-eye { color: var(--glow-purple); }
+.teal-eye { color: var(--glow-teal); }
+.red-eye { color: var(--glow-red); }
+.orange-eye { color: var(--glow-orange); }
+.silver-eye { color: var(--glow-silver); }
+.gold-eye { color: var(--glow-gold); }
+
+@keyframes eye-blink {
+    0%, 90%, 100% { transform: scaleY(1); }
+    95% { transform: scaleY(0.1); }
+}
+
+/* ===== PANELS ===== */
+.panel {
+    position: fixed;
+    background: var(--secondary-dark);
+    border: 2px solid var(--glow-blue);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.panel-header {
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--glow-blue);
+}
+
+.panel-header h2 {
+    font-size: 1em;
+    color: var(--glow-blue);
+    margin: 0;
+}
+
+.panel-body {
+    padding: 12px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.panel-footer {
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--glow-blue);
+}
+
+/* Panel Positioning */
+.drop-zone-panel {
+    top: 70px;
+    left: 20px;
+    width: 350px;
+    height: 250px;
+}
+
+.settings-panel {
+    top: 70px;
+    right: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.actions-panel {
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    max-height: 350px;
+}
+
+.glyph-log-panel {
+    bottom: 20px;
+    left: 340px;
+    right: 340px;
+    height: 250px;
+}
+
+.plugins-panel {
+    top: 390px;
+    right: 20px;
+    width: 300px;
+    height: 350px;
+}
+
+.downloads-panel {
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 250px;
+}
+
+/* Drop Zone */
+.drop-zone {
+    border: 2px dashed var(--glow-teal);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-over {
+    background: rgba(20, 184, 166, 0.1);
+    box-shadow: inset 0 0 20px rgba(20, 184, 166, 0.2);
+}
+
+.drop-zone p {
+    font-size: 0.9em;
+    color: var(--glow-teal);
+}
+
+/* Ritual Buttons */
+.ritual-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background: var(--glow-purple);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    transition: all 0.3s ease;
+}
+
+.ritual-btn:hover {
+    box-shadow: 0 0 15px var(--glow-purple);
+    transform: translateX(5px);
+}
+
+/* Glyph Log */
+.glyph-entry {
+    padding: 8px;
+    margin: 5px 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--glow-blue);
+    border-radius: 4px;
+    font-size: 0.85em;
+    animation: glyph-appear 0.5s ease;
+}
+
+@keyframes glyph-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.glyph-entry .timestamp {
+    color: var(--glow-blue);
+    font-size: 0.8em;
+}
+
+.glyph-entry .description {
+    color: var(--accent-light);
+    margin: 5px 0;
+}
+
+/* Download Entry */
+.download-entry {
+    padding: 8px;
+    margin: 5px 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85em;
+}
+
+.download-entry .filename {
+    color: var(--glow-teal);
+    flex: 1;
+}
+
+.download-entry .download-link {
+    color: var(--glow-green);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.download-entry .download-link:hover {
+    color: var(--glow-gold);
+}
+
+/* Plugin Entry */
+.plugin-entry {
+    padding: 8px;
+    margin: 5px 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-size: 0.85em;
+}
+
+.plugin-entry .plugin-name {
+    color: var(--glow-green);
+    font-weight: bold;
+}
+
+.plugin-entry .plugin-actions {
+    margin-top: 5px;
+}
+
+.plugin-entry button {
+    padding: 4px 8px;
+    margin-right: 5px;
+    background: var(--glow-orange);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8em;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--glow-blue);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--glow-purple);
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+    .drop-zone-panel { width: 300px; }
+    .settings-panel { width: 280px; }
+    .glyph-log-panel { left: 320px; right: 320px; }
+}
