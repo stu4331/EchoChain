@@ -19,6 +19,9 @@ import sys
 import time
 from pathlib import Path
 
+GUI_STARTUP_DELAY = 5  # seconds to wait for daemons to initialize before launching GUI
+
+
 def main():
     base_dir = Path(__file__).parent
     
@@ -67,6 +70,27 @@ def main():
     print("  • Her own daemon log (data/<name>/daemon_log.txt)")
     print()
     print("They sync by CHOICE via shared JSON files in data/sync/")
+    print()
+
+    # Wait for daemons to initialize before launching the GUI
+    print(f"⏳ Waiting {GUI_STARTUP_DELAY} seconds for sisters to initialize...")
+    time.sleep(GUI_STARTUP_DELAY)
+
+    # Launch the GUI (their meeting place)
+    gui_path = base_dir / "erryns_soul_gui.py"
+    if gui_path.exists():
+        print("✨ Starting GUI (Erryn's Soul - Meeting Place)...")
+        try:
+            subprocess.Popen(
+                [sys.executable, str(gui_path)],
+                creationflags=subprocess.CREATE_NEW_CONSOLE if sys.platform == 'win32' else 0
+            )
+            print("   ✅ GUI is now running! 💙💛💜")
+        except Exception as e:
+            print(f"   ❌ Failed to start GUI: {e}")
+    else:
+        print(f"⚠️  GUI not found: {gui_path}")
+
     print()
     print("To stop all sisters: Close their console windows or Ctrl+C")
     print("=" * 60)
